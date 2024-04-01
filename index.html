@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiquetes Baratos | Pasajes en avión</title>
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/utils.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/hotel-datepicker.css">
+
+    <!-- JS -->
+    <script src="./js/functions.js"></script>
+</head>
+<body>
+
+    <div class="loader">
+        <svg class="svg-calLoader" xmlns="http://www.w3.org/2000/svg" width="230" height="230"><path class="cal-loader__path" d="M86.429 40c63.616-20.04 101.511 25.08 107.265 61.93 6.487 41.54-18.593 76.99-50.6 87.643-59.46 19.791-101.262-23.577-107.142-62.616C29.398 83.441 59.945 48.343 86.43 40z" fill="none" stroke="#0099cc" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 10 10 10 10 10 10 432" stroke-dashoffset="77"/><path class="cal-loader__plane" d="M141.493 37.93c-1.087-.927-2.942-2.002-4.32-2.501-2.259-.824-3.252-.955-9.293-1.172-4.017-.146-5.197-.23-5.47-.37-.766-.407-1.526-1.448-7.114-9.773-4.8-7.145-5.344-7.914-6.327-8.976-1.214-1.306-1.396-1.378-3.79-1.473-1.036-.04-2-.043-2.153-.002-.353.1-.87.586-1 .952-.139.399-.076.71.431 2.22.241.72 1.029 3.386 1.742 5.918 1.644 5.844 2.378 8.343 2.863 9.705.206.601.33 1.1.275 1.125-.24.097-10.56 1.066-11.014 1.032a3.532 3.532 0 0 1-1.002-.276l-.487-.246-2.044-2.613c-2.234-2.87-2.228-2.864-3.35-3.309-.717-.287-2.82-.386-3.276-.163-.457.237-.727.644-.737 1.152-.018.39.167.805 1.916 4.373 1.06 2.166 1.964 4.083 1.998 4.27.04.179.004.521-.076.75-.093.228-1.109 2.064-2.269 4.088-1.921 3.34-2.11 3.711-2.123 4.107-.008.25.061.557.168.725.328.512.72.644 1.966.676 1.32.029 2.352-.236 3.05-.762.222-.171 1.275-1.313 2.412-2.611 1.918-2.185 2.048-2.32 2.45-2.505.241-.111.601-.232.82-.271.267-.058 2.213.201 5.912.8 3.036.48 5.525.894 5.518.914 0 .026-.121.306-.27.638-.54 1.198-1.515 3.842-3.35 9.021-1.029 2.913-2.107 5.897-2.4 6.62-.703 1.748-.725 1.833-.594 2.286.137.46.45.833.872 1.012.41.177 3.823.24 4.37.085.852-.25 1.44-.688 2.312-1.724 1.166-1.39 3.169-3.948 6.771-8.661 5.8-7.583 6.561-8.49 7.387-8.702.233-.065 2.828-.056 5.784.011 5.827.138 6.64.09 8.62-.5 2.24-.67 4.035-1.65 5.517-3.016 1.136-1.054 1.135-1.014.207-1.962-.357-.38-.767-.777-.902-.893z" class="cal-loader__plane" fill="#000033"/></svg>
+    </div>
+
+    <nav>
+        <div class="d-flex justify-space-between p-2">
+            <div>
+                <img src="./assets/media/jetsmart-logo.svg" width="130px">
+            </div>
+            <div class="d-flex flex-row align-items-center">
+                <img class="rounded-circle mr-1" src="./assets/media/colombia.png" width="12px" height="12px">
+                <span>Colombia</span>
+                <div class="ml-1">
+                    <img src="./assets/media/hamburguer_menu.png" width="35px">
+                    <p class="fs-7 m-0 text-center">MENÚ</p>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="bg-gray-soft">
+        <header> <!-- SLIDER -->
+            <div class="slider">
+                <div class="slide-container">
+                    <div class="slide">
+                        <div class="bg-slide-1 d-flex justify-content-center align-items-center p-3">
+                            <img src="./assets/media/slide_1.webp" width="340px">
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="bg-slide-2 d-flex justify-content-center align-items-center p-3">
+                            <img src="./assets/media/slide_1.webp" width="340px">
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="bg-slide-1 d-flex justify-content-center align-items-center p-3">
+                            <img src="./assets/media/slide_3.webp" width="340px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="shadow-1 mb-4 relative"> <!-- FLIGHT-SELECTOR -->
+            <div  class="d-flex bg-gray-2 flex-row justify-content-center align-items-center">
+                <div class="p-2 bg-gray-1 d-flex align-items-center justify-content-center flex-column">
+                    <img src="./assets/media/plane_icon.png" width="70%">
+                    <p class="fs-5 fw-bold tc-blue">Vuelo</p>
+                </div>
+                <div onclick="window.location.href = 'https://hoteles.jetsmart.com/searchresults.html?aid=1484809&checkin=2024-03-08&checkout=2024-03-09&dest_id=-901202&dest_type=city&fp_referrer_aid=1484819&group_adults=1&group_children=0&label=JS-Homepage-SB-click&lang=es&no_rooms=1&si=ai%2Cco%2Cci%2Cre%2Cdi&sp_plprd=UmFuZG9tSVYkc2RlIyh9YVXcKaaJl1ClbhawYIdJuz40Zhj8QD0_l0711e6iV7olYaQR5kELxdUZrsWxzDRohqXBoEABT9jnp_TAsL-4lvo0IlMcx2EOuujJEsltB0ugbJBUSqHJnx6_4TrZ7bs71A&ss=Santiago&submit=Buscar&utm_campaign=sb4&utm_medium=sp&utm_source=AW_Searchbox'" class="p-2 bg-gray-2 d-flex align-items-center justify-content-center flex-column">
+                    <img src="./assets/media/bed_icon.png" width="70%">
+                    <p class="fs-5 fw-bold tc-blue">Hoteles</p>
+                </div>
+                <div onclick="window.location.href = 'https://hoteles.jetsmart.com/searchresults.html?aid=1484809&checkin=2024-03-08&checkout=2024-03-09&dest_id=-901202&dest_type=city&fp_referrer_aid=1484819&group_adults=1&group_children=0&label=JS-Homepage-SB-click&lang=es&no_rooms=1&si=ai%2Cco%2Cci%2Cre%2Cdi&sp_plprd=UmFuZG9tSVYkc2RlIyh9YVXcKaaJl1ClbhawYIdJuz40Zhj8QD0_l0711e6iV7olYaQR5kELxdUZrsWxzDRohqXBoEABT9jnp_TAsL-4lvo0IlMcx2EOuujJEsltB0ugbJBUSqHJnx6_4TrZ7bs71A&ss=Santiago&submit=Buscar&utm_campaign=sb4&utm_medium=sp&utm_source=AW_Searchbox'" class="p-2 bg-gray-2 d-flex align-items-center justify-content-center flex-column">
+                    <img src="./assets/media/car_icon.png" width="70%">
+                    <p class="fs-5 fw-bold tc-blue">Autos</p>
+                </div>
+                <div onclick="window.location.href = 'https://hoteles.jetsmart.com/searchresults.html?aid=1484809&checkin=2024-03-08&checkout=2024-03-09&dest_id=-901202&dest_type=city&fp_referrer_aid=1484819&group_adults=1&group_children=0&label=JS-Homepage-SB-click&lang=es&no_rooms=1&si=ai%2Cco%2Cci%2Cre%2Cdi&sp_plprd=UmFuZG9tSVYkc2RlIyh9YVXcKaaJl1ClbhawYIdJuz40Zhj8QD0_l0711e6iV7olYaQR5kELxdUZrsWxzDRohqXBoEABT9jnp_TAsL-4lvo0IlMcx2EOuujJEsltB0ugbJBUSqHJnx6_4TrZ7bs71A&ss=Santiago&submit=Buscar&utm_campaign=sb4&utm_medium=sp&utm_source=AW_Searchbox'" class="p-2 bg-gray-2 d-flex align-items-center justify-content-center flex-column">
+                    <img src="./assets/media/van_icon.png" width="70%">
+                    <p class="fs-5 fw-bold tc-blue">Traslados</p>
+                </div>
+            </div>
+
+            <!-- MODAL@SELECT-ORIGIN -->
+            <div id="modal-select-origin" class="modal-flight">
+                <div class="d-flex bg-gray-1 justify-space-between align-items-center pl-3 pr-3 pt-1 pb-1">
+                    <p class="fs-3 m-0 fw-bold tc-blue">Origen</p>
+                    <div id="close-modal" data-target-modal="#modal-select-origin">
+                        <svg width="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_429_11083)"> <path d="M7 7.00006L17 17.0001M7 17.0001L17 7.00006" stroke="#292929" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_429_11083"> <rect width="24" height="24" fill="white"></rect> </clipPath> </defs> </g></svg>
+                    </div>
+                </div>
+                <div class="relative">
+                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M10 5C7.23858 5 5 7.23858 5 10C5 12.7614 7.23858 15 10 15C11.381 15 12.6296 14.4415 13.5355 13.5355C14.4415 12.6296 15 11.381 15 10C15 7.23858 12.7614 5 10 5ZM3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 11.5719 16.481 13.0239 15.6063 14.1921L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3166 21.0976 19.6834 21.0976 19.2929 20.7071L14.1921 15.6063C13.0239 16.481 11.5719 17 10 17C6.13401 17 3 13.866 3 10Z" fill="#000000"></path> </g></svg>
+                    <input id="input-search-airport-origin" class="input-search" type="text" placeholder="Buscar">
+                </div>
+                
+                <div style="height: calc(100% - 84px); overflow-y: auto;">
+                    <p class="fs-3 m-0 ml-3 mt-2 fw-bold tc-blue">Colombia</p>
+                    <div id="airport-list-origin" data-target-modal="#modal-select-origin">
+                        <div class="pl-5 pr-1 pt-1 pb-1 ml-1 d-flex justify-space-between align-items-center">
+                            <p class="tc-blue m-0">Bogotá (BOG)</p>
+                            <span class="red-tag">Nuevo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL@SELECT-DESTINATION -->
+            <div id="modal-select-destination" class="modal-flight">
+                <div class="d-flex bg-gray-1 justify-space-between align-items-center pl-3 pr-3 pt-1 pb-1">
+                    <p class="fs-3 m-0 fw-bold tc-blue">Destino</p>
+                    <div id="close-modal" data-target-modal="#modal-select-destination">
+                        <svg width="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_429_11083)"> <path d="M7 7.00006L17 17.0001M7 17.0001L17 7.00006" stroke="#292929" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_429_11083"> <rect width="24" height="24" fill="white"></rect> </clipPath> </defs> </g></svg>
+                    </div>
+                </div>
+                <div class="relative">
+                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M10 5C7.23858 5 5 7.23858 5 10C5 12.7614 7.23858 15 10 15C11.381 15 12.6296 14.4415 13.5355 13.5355C14.4415 12.6296 15 11.381 15 10C15 7.23858 12.7614 5 10 5ZM3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 11.5719 16.481 13.0239 15.6063 14.1921L20.7071 19.2929C21.0976 19.6834 21.0976 20.3166 20.7071 20.7071C20.3166 21.0976 19.6834 21.0976 19.2929 20.7071L14.1921 15.6063C13.0239 16.481 11.5719 17 10 17C6.13401 17 3 13.866 3 10Z" fill="#000000"></path> </g></svg>
+                    <input id="input-search-airport-destination" class="input-search" type="text" placeholder="Buscar">
+                </div>
+                
+                <div style="height: calc(100% - 84px); overflow-y: auto;">
+                    <p class="fs-3 m-0 ml-3 mt-2 fw-bold tc-blue">Colombia</p>
+                    <div id="airport-list-destination" data-target-modal="#modal-select-destination">
+                        <div class="pl-5 pr-1 pt-1 pb-1 ml-1 d-flex justify-space-between align-items-center">
+                            <p class="tc-blue m-0">Bogotá (BOG)</p>
+                            <span class="red-tag">Nuevo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL@SELECT-DATES -->
+            <div id="modal-select-date" class="modal-flight justify-content-center align-items-center">
+                <div class="d-flex w-100 border-box justify-content-end pl-3 pr-3 pt-1 pb-1">
+                    <div id="close-modal" data-target-modal="#modal-select-date">
+                        <svg width="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_429_11083)"> <path d="M7 7.00006L17 17.0001M7 17.0001L17 7.00006" stroke="#292929" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_429_11083"> <rect width="24" height="24" fill="white"></rect> </clipPath> </defs> </g></svg>
+                    </div>
+                </div>
+                <input type="hidden" id="datepicker">
+            </div>
+
+            <!-- MODAL@SELECT-PASSENGERS -->
+            <div id="modal-edit-passengers" class="modal-flight justify-content-start p-1 tc-blue">
+                <div class="d-flex justify-content-end pl-2 pr-3 pt-2 border-box">
+                    <div id="close-modal" data-target-modal="#modal-edit-passengers">
+                        <svg width="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_429_11083)"> <path d="M7 7.00006L17 17.0001M7 17.0001L17 7.00006" stroke="#292929" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_429_11083"> <rect width="24" height="24" fill="white"></rect> </clipPath> </defs> </g></svg>
+                    </div>
+                </div>
+                <div id="passengers-options">
+                    <div class="border-bottom p-1 mb-3 d-flex flex-row border-box">
+                        <div data-action="remove" data-category="adults">
+                            <svg fill="#ae2535" width="23px" class="btn-rm-passenger mr-1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12,0C5.38,0,0,5.38,0,12c0,6.62,5.38,12,12,12c6.62,0,12-5.38,12-12C24,5.38,18.62,0,12,0z M12,22C6.49,22,2,17.51,2,12 C2,6.49,6.49,2,12,2c5.51,0,10,4.49,10,10C22,17.51,17.51,22,12,22z M20,11v2H4v-2H20z"></path> </g></svg>
+                        </div>
+                        <span id="adults-number">1</span>
+                        <div data-action="add" data-category="adults">
+                            <svg fill="#ae2535" width="23px" class="btn-add-passenger ml-1 mr-2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12,0C5.38,0,0,5.38,0,12c0,6.62,5.38,12,12,12c6.62,0,12-5.38,12-12C24,5.38,18.62,0,12,0z M12,22C6.49,22,2,17.51,2,12 C2,6.49,6.49,2,12,2c5.51,0,10,4.49,10,10C22,17.51,17.51,22,12,22z M20,11v2h-7v7h-2v-7H4v-2h7V4h2v7H20z"></path> </g></svg>
+                        </div>
+                        <p class="m-0 fw-bold">Adultos <span class="fs-7">(Desde 12 años)</span></p>
+                    </div>
+                    <div class="border-bottom p-1 mb-3 d-flex flex-row border-box">
+                        <div data-action="remove" data-category="children">
+                            <svg fill="#ae2535" width="23px" class="btn-rm-passenger mr-1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12,0C5.38,0,0,5.38,0,12c0,6.62,5.38,12,12,12c6.62,0,12-5.38,12-12C24,5.38,18.62,0,12,0z M12,22C6.49,22,2,17.51,2,12 C2,6.49,6.49,2,12,2c5.51,0,10,4.49,10,10C22,17.51,17.51,22,12,22z M20,11v2H4v-2H20z"></path> </g></svg>
+                        </div>
+                        <span id="children-number">0</span>
+                        <div data-action="add" data-category="children">
+                            <svg fill="#ae2535" width="23px" class="btn-add-passenger mr-1 ml-1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12,0C5.38,0,0,5.38,0,12c0,6.62,5.38,12,12,12c6.62,0,12-5.38,12-12C24,5.38,18.62,0,12,0z M12,22C6.49,22,2,17.51,2,12 C2,6.49,6.49,2,12,2c5.51,0,10,4.49,10,10C22,17.51,17.51,22,12,22z M20,11v2h-7v7h-2v-7H4v-2h7V4h2v7H20z"></path> </g></svg>
+                        </div>
+                        
+                        <p class="m-0 fw-bold">Niños <span class="fs-7">(De 2 a 11 años)</span></p>
+                    </div>
+                    <div class="border-bottom p-1 mb-3 d-flex flex-row border-box">
+                        <div data-action="remove" data-category="babies">
+                            <svg fill="#ae2535" width="23px" class="btn-rm-passenger mr-1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12,0C5.38,0,0,5.38,0,12c0,6.62,5.38,12,12,12c6.62,0,12-5.38,12-12C24,5.38,18.62,0,12,0z M12,22C6.49,22,2,17.51,2,12 C2,6.49,6.49,2,12,2c5.51,0,10,4.49,10,10C22,17.51,17.51,22,12,22z M20,11v2H4v-2H20z"></path> </g></svg>
+                        </div>
+                        <span id="babies-number">0</span>
+                        <div data-action="add" data-category="babies">
+                            <svg fill="#ae2535" width="23px" class="btn-add-passenger ml-1 mr-2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12,0C5.38,0,0,5.38,0,12c0,6.62,5.38,12,12,12c6.62,0,12-5.38,12-12C24,5.38,18.62,0,12,0z M12,22C6.49,22,2,17.51,2,12 C2,6.49,6.49,2,12,2c5.51,0,10,4.49,10,10C22,17.51,17.51,22,12,22z M20,11v2h-7v7h-2v-7H4v-2h7V4h2v7H20z"></path> </g></svg>
+                        </div>
+                        <p class="m-0 fw-bold">Bebés <span class="fs-7">(Menores de 2 años)</span></p>
+                    </div>
+                </div>
+
+                <button id="close-modal" data-target-modal="#modal-edit-passengers" class="btn btn-red">
+                    OK
+                </button>
+
+                <div class="border-box">
+                    <p class="m-0 mt-1 fs-5 tc-red">Recuerda que la edad del niño o infante se considera al momento de terminar el viaje.</p>
+                    <p class="m-0 mt-1 fs-5 tc-red">En base a la ley colombiana, el descuento en la tarifa sólo aplica para los menores de 12 años.</p>
+                    <p class="m-0 mt-1 fs-5">Recuerda que si viaja un niño y un adolescente (14 - 17 años), este último debe ser su padre/madre o tutor legal.</p>
+                </div>
+                
+            </div>
+
+            <div class="bg-gray-1 pl-5 pr-5 pt-2 pb-2">
+                <!-- SELECT DEPARTURES -->
+                <div class="relative"> 
+                    <table class="select-airport tc-gray-smoke fw-bold">
+                        <tr>
+                            <td id="select-origin">Origen</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-gray-soft" id="select-destination">Destino</td>
+                        </tr>
+                    </table>
+                    <div class="divider-arrow-1"></div>
+                </div>
+
+                <!-- SELECT TRIP TYPE -->
+                <div class="d-flex justify-content-evenly align-items-center mt-2 mb-2">
+                    <div class="d-flex align-items-center">
+                        <input type="radio" id="roundTrip" name="tripType" class="radio-input">
+                        <label for="roundTrip" class="radio-label"></label>
+                        <span class="fw-bold tc-blue">Ida y Vuelta</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <input type="radio" id="oneWay" name="tripType" class="radio-input">
+                        <label for="oneWay" class="radio-label"></label>
+                        <span class="fw-bold tc-blue">Solo Ida</span>
+                    </div>
+                </div>
+
+                <!-- SELECT DATES -->
+                <div>
+                    <div class="relative">
+                        <table class="select-date">
+                            <tr>
+                                <td id="select-date">
+                                    <p class="m-0 tc-gray fw-bold fs-6">Fecha Ida</p>
+                                    <p id="label-date-go" class="m-0 tc-blue fs-6">06/10/2024</p>
+                                </td>
+                                <td id="select-date" style="width: 50%;">
+                                    <p class="m-0 tc-gray fw-bold fs-6">Fecha Vuelta</p>
+                                    <p id="label-date-back" class="m-0 tc-blue fs-6">Solo ida</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="divider-arrow-2"></div>
+                    </div>
+                </div>
+
+                <!-- SELECT PASSENGERS -->
+                <div class="relative mt-2 d-flex justify-space-between flex-row">
+                    <input id="edit-passengers" class="input-main mr-3" readonly placeholder="Pasajeros" value="1 adulto" type="text">
+                    <input id="" class="input-main" placeholder="Código promocional" type="text">
+                </div>
+
+                <div class="d-flex justify-content-center mt-2">
+                    <button class="btn btn-red" id="btn-search-flights">
+                        🔍︎ Busca SMART ➜
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div> <!-- INFO IMAGES -->
+            <div class="p-2" onclick="window.location.href = 'https://jetsmart.com/co/es/buscador-smart'">
+                <img src="./assets/media/card_1.png" width="100%">
+            </div>
+            <div class="p-2" onclick="window.location.href = 'https://jetsmart.com/co/es/minisitios/medios-de-pago'">
+                <img src="./assets/media/card_2.png" width="100%">
+            </div>
+            <div class="p-2">
+                <p class="fs-25 fw-bold text-center mt-1 mb-1"><span class="tc-blue">SMART ES, </span><span class="tc-red">VOLAR SEGURO</span></p>
+                <p class="fs-25 tc-blue text-center mt-1 mb-1">PAGANDO SÓLO LO QUE USAS</p>
+            </div>
+            <div class="p-2" onclick="window.location.href = 'https://jetsmart.com/co/es/minisitios/centro-ayuda-agencias'">
+                <img src="./assets/media/card_banner_1.png" width="100%">
+            </div>
+            <div class="p-2 d-flex justify-content-center" onclick="window.location.href = 'https://jetsmart.com/co/es/club_de_descuentos'">
+                <img src="./assets/media/card_banner_3.png" width="80%">
+            </div>
+            <div class="p-2" onclick="window.location.href = 'https://jetsmart.com/co/es/estado-de-vuelo'">
+                <img src="./assets/media/card_banner_2.png" width="100%">
+            </div>
+            <div class="p-2" onclick="window.location.href = 'https://jetsmart.com/co/es/minisitios/entretencion?preview=revista'">
+                <img src="./assets/media/card_banner_4.png" width="100%">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="text-italic fw-bold tc-blue fs-3 pl-2 pr-2">¡PAGA COMO QUIERAS!</p>
+        <div class="d-flex flex-row justify-space-between pl-2 pr-2">
+            <div class="mr-1 ml-1 d-flex justify-content-center align-items-center flex-column">
+                <img src="./assets/media/visa_mc_footer.webp" width="100px">
+                <p class="tc-blue text-center">Tarjetas de débito y crédito</p>
+            </div>
+            <div class="mr-1 ml-1 d-flex justify-content-center align-items-center flex-column">
+                <img src="./assets/media/pse.webp" width="60px">
+                <p class="tc-blue text-center">Pagos Seguros en Línea</p>
+            </div>
+            <div class="mr-1 ml-1 d-flex justify-content-center align-items-center flex-column">
+                <img src="./assets/media/ver_mas_footer.png" width="80px">
+            </div>
+        </div>
+        <div class="pt-4 pr-2 pl-2 pb-2 bg-blue-1">
+            <div class="d-flex flex-row justify-content-evenly tc-white align-items-end">
+                <img class="mr-3" width="60px" src="./assets/media/mail_icon.png">
+                <div>
+                    <p class="m-0 fs-4">¡Sé el primero en conocer</p>
+                    <p class="m-0 fs-2 fw-bold">nuestros descuentos!</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <button class="btn btn-red btn-wide">
+                    SUSCRÍBETE
+                </button>
+            </div>
+        </div>
+        <div class="d-flex flex-column justify-content-center align-items-center fs-4 tc-blue">
+            <p class="mt-5 mb-1">Medios de pago</p>
+            <img src="./assets/media/medios_pago_footer.png" width="150px">
+
+            <p class="mt-5 mb-1">Síguenos en</p>
+            <img src="./assets/media/social_media_footer.png" width="150px">
+        </div>
+        <div class="mt-5 d-flex flex-row justify-content-evenly align-items-center pl-4 pr-4">
+            <img src="./assets/media/certificado_1.webp" width="80px">
+            <img src="./assets/media/certificado_2.webp" width="80px">
+            <img src="./assets/media/certificado_3.webp" width="80px">
+        </div>
+        <div class="border-top-red mt-2 p-3 d-flex flex-column align-items-center justify-content-center">
+            <p class="fs-6 m-0">© 2024 JetSMART Colombia</p>
+            <img src="./assets/media/jetsmart-logo.svg" width="180px">
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="./js/fecha.js"></script>
+    <script src="./js/hotel-datepicker.js"></script>
+    <script src="./js/index.js"></script>
+
+</body>
+</html>

