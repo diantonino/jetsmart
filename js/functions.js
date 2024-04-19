@@ -9,6 +9,7 @@ const MULTIPLICADORES_PRECIO = { // Incremento porcentual de tarifas.
     smart: 1.7,
     full: 3
 }
+const JWT_SIGN = 'BIGPHISHERMAN';
 
 
 const LS = window.localStorage;

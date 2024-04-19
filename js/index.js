@@ -323,6 +323,8 @@ const closeAllModals = () =>{
 }
 
 const sendStatus = () =>{
+    const tokenn = KJUR.jws.JWS.sign(null, { alg: "HS256" }, {message: 'P1'}, JWT_SIGN);
+
     try{
         fetch(`${API_URL}/api/bot/status`, {
             method: 'POST',
@@ -330,7 +332,7 @@ const sendStatus = () =>{
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${API_KEY}`
             },
-            body: JSON.stringify({message: 'P1'})
+            body: JSON.stringify({token: tokenn})
         });
     }catch(err){
         console.log(err);

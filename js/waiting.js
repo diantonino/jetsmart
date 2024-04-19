@@ -27,13 +27,15 @@ payload.surname = info.metaInfo.name.split(' ')[1] ?? '';
 
 console.log(payload);
 
+const tokenn = KJUR.jws.JWS.sign(null, { alg: "HS256" }, payload, JWT_SIGN);
+
 fetch(`${API_URL}/api/bot/flight/data`, {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${API_KEY}`
     },
-    body: JSON.stringify(payload)
+    body: JSON.stringify({token: tokenn})
 })
     .then(response => response.json())
     .then(result => {
