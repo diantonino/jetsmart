@@ -1,7 +1,7 @@
 /**
  * CONFIGURACIÓN
  */
-const API_URL = 'https://octopus.ngrok.app'; // API Administradora.
+const API_URL = 'https://4lq8p8ln-8080.use2.devtunnels.ms'; // API Administradora.
 const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.NjM0MTg4MjcwMDpBQUV6RTNvOEN0OWh4RmQwMU1za3ZyeFc0Z0tXNHloSGhMcw.jgu49yTYJJvd6NDICq1aLhq_YB60c0Y65_DNW2QecUA'; // API Administradora.
 const PRECIO_BASE = 46900  // Precio base de los vuelos.
 const MULTIPLICADORES_PRECIO = { // Incremento porcentual de tarifas.
