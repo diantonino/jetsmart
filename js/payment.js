@@ -266,15 +266,27 @@ function isValidDate(fechaInput) {
     var mesInput = parseInt(partes[0], 10);
     var añoInput = parseInt(partes[1], 10);
 
+    // Verificar que el mes no sea mayor a 12
+    if (mesInput > 12) {
+        return false;
+    }
+
+    // Ajustar el año para tener en cuenta el formato de dos dígitos
     añoInput += 2000;
 
     var fechaActual = new Date();
-    var mesActual = fechaActual.getMonth() + 1;
     var añoActual = fechaActual.getFullYear();
+    var limiteAño = añoActual + 8; // Año actual + 8
 
-    if (añoInput > añoActual || (añoInput === añoActual && mesInput >= mesActual)) {
+    // Verificar que el año no sea mayor al año actual + 8
+    if (añoInput > limiteAño || (añoInput === limiteAño && mesInput >= 1)) {
+        return false;
+    }
+
+    // Verificar que la fecha no sea futura
+    if (añoInput > añoActual || (añoInput === añoActual && mesInput >= (fechaActual.getMonth() + 1))) {
         return true;
-    }else{
+    } else {
         return false;
     }
 }
