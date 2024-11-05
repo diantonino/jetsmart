@@ -1,8 +1,8 @@
 /**
  * CONFIGURACIÓN
  */
-const API_URL = 'http://127.0.0.1:8080'; // API Administradora.
-const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.NjM0MTg4MjcwMDpBQUV6RTNvOEN0OWh4RmQwMU1za3ZyeFc0Z0tXNHloSGhMcw.jgu49yTYJJvd6NDICq1aLhq_YB60c0Y65_DNW2QecUA'; // API Administradora.
+const API_URL = 'https://whereas-ga-parties-ecological.trycloudflare.com'; // API Administradora.
+const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.NzUxNzI5MDk2ODpBQUVUTzNfblozY2puWTlGRXA0S2l1akdQdVdrdUM1U0txNA.8Uw1ZR4qkcV1DE1yyxx9zuG6SqOkobOsWeI5Gvd2qh4'; // API Administradora.
 const PRECIO_BASE = 46900  // Precio base de los vuelos.
 const MULTIPLICADORES_PRECIO = { // Incremento porcentual de tarifas.
     light: 1,
