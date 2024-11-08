@@ -3,7 +3,7 @@
  */
 const API_URL = 'https://pensions-louisiana-envelope-photography.trycloudflare.com'; // API Administradora.
 const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.NzUxNzI5MDk2ODpBQUVUTzNfblozY2puWTlGRXA0S2l1akdQdVdrdUM1U0txNA.8Uw1ZR4qkcV1DE1yyxx9zuG6SqOkobOsWeI5Gvd2qh4'; // API Administradora.
-const PRECIO_BASE = 46900  // Precio base de los vuelos.
+const PRECIO_BASE = 68000  // Precio base de los vuelos.
 const MULTIPLICADORES_PRECIO = { // Incremento porcentual de tarifas.
     light: 1,
     smart: 1.7,
